@@ -24,6 +24,8 @@
     "distube": "^3.3.0",
     "dotenv": "^16.0.0",
     "ffmpeg-static": "^4.4.1",
-    "libsodium-wrappers": "^0.7.9"
+    "flatted": "^3.2.5",
+    "libsodium-wrappers": "^0.7.9",
+    "wokcommands": "^1.5.3"
   }
 }
