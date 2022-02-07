@@ -16,6 +16,9 @@
   "bugs": {
     "url": "https://github.com/niceguynix/discordBot/issues"
   },
+  "engines": {
+    "node": ">=16.6.0"
+  },
   "homepage": "https://github.com/niceguynix/discordBot#readme",
   "dependencies": {
     "@discordjs/opus": "^0.7.0",
