@@ -18,7 +18,7 @@
     "url": "https://github.com/niceguynix/discordBot/issues"
   },
   "engines": {
-    "node": ">=16.6.0"
+    "node": ">=16.6.0 <17.5.0"
   },
   "homepage": "https://github.com/niceguynix/discordBot#readme",
   "dependencies": {
