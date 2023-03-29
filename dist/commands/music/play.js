@@ -8,7 +8,6 @@ exports.default = {
     maxArgs: -1,
     expectedArgs: "<args>",
     callback: ({ message, text, client, interaction, args, member }) => {
-        console.log(message);
         console.log(args, text);
         let voiceChannel;
         let textChannel;
