@@ -1,18 +1,18 @@
 import Distube from "distube";
-import DiscordJs from "discord.js";
-import {ICommand as command_obj,ICallbackObject as callback_fn} from 'wokcommands'
+import DiscordJs, { Message, Sweepers } from "discord.js";
+import {CommandObject   as command_obj,CommandUsage as callback_fn} from 'wokcommands'
 
 export class Client extends DiscordJs.Client {
   Distube : Distube;
 }
 
-export interface ICallbackObject extends callback_fn{
-  client: Client;
-}
+// type Ka = keyof Message // 'x' | 'y'
+// type Kb = keyof  // 'y' | 'z'
+// type Kc = Ka & Kb
 
-export interface ICommand  extends command_obj {
-  callback?(obj: ICallbackObject): any
+export interface CommandUsage  extends callback_fn {
+  client:Client;
+  message?:Message|null;
 } 
-
 
 

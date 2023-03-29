@@ -1,16 +1,34 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const distube_1 = require("distube");
+const wokcommands_1 = require("wokcommands");
 exports.default = {
-    callback: ({ message, client }) => {
-        if (!(0, distube_1.isTextChannelInstance)(message.channel)) {
-            return message.reply('Use this command in a server pls');
+    type: wokcommands_1.CommandType.BOTH,
+    description: "Play a sng",
+    minArgs: 1,
+    maxArgs: -1,
+    expectedArgs: "<args>",
+    callback: ({ message, text, client, interaction, args, member }) => {
+        console.log(message);
+        console.log(args, text);
+        let voiceChannel;
+        let textChannel;
+        if (interaction) {
+            const guild = client.guilds.cache.get(interaction?.guildId);
+            const member1 = guild?.members.cache.get(interaction?.member?.user?.id);
+            voiceChannel = member1?.voice.channel;
+            textChannel = interaction.channel;
         }
-        if (!message.member?.voice.channel) {
-            return message.channel.send("You must be in a voice channel to use this command!");
+        else {
+            if (!message)
+                return { content: "How u call that" };
+            voiceChannel = message.member?.voice.channel;
+            textChannel = message.channel;
         }
-        client.Distube.play(message.member.voice.channel, message.content, {
-            textChannel: message.channel,
+        // if( !isTextChannelInstance(message.channel) ) {
+        //   return message.reply('Use this command in a server pls');
+        // }
+        client.Distube.play(voiceChannel, args.join(' '), {
+            textChannel
         });
     },
 };

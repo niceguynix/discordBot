@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./dist/index.js"
+    "start": "node ./dist/index.js",
+    "build": "tsc --outDir ./dist",
+    "runc": "npm run build && npm run start"
   },
   "repository": {
     "type": "git",
@@ -18,18 +20,19 @@
     "url": "https://github.com/niceguynix/discordBot/issues"
   },
   "engines": {
-    "node": ">=16.6.0 <17.5.0"
+    "node": ">=16.6.0"
   },
   "homepage": "https://github.com/niceguynix/discordBot#readme",
   "dependencies": {
-    "@discordjs/opus": "^0.7.0",
-    "@discordjs/voice": "^0.8.0",
-    "discord.js": "^13.6.0",
-    "distube": "^3.3.0",
-    "dotenv": "^16.0.0",
-    "ffmpeg-static": "^4.4.1",
-    "flatted": "^3.2.5",
-    "libsodium-wrappers": "^0.7.9",
-    "wokcommands": "^1.5.3"
+    "@discordjs/opus": "^0.9.0",
+    "@discordjs/voice": "^0.15.0",
+    "@distube/yt-dlp": "^1.1.3",
+    "discord.js": "^14.8.0",
+    "distube": "^4.0.3",
+    "dotenv": "^16.0.3",
+    "ffmpeg-static": "^5.1.0",
+    "flatted": "^3.2.7",
+    "libsodium-wrappers": "^0.7.11",
+    "wokcommands": "^2.1.0"
   }
 }

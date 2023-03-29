@@ -1,8 +1,10 @@
-import { Guild, GuildTextBasedChannel } from "discord.js";
-import { ICommand } from "../../type";
+import { CommandType ,CommandObject } from "wokcommands";
+import { CommandUsage } from "../../type";
 
 export default {
-  callback: ({ message, client }) => {
-    client.Distube.skip(message);
+  description:"Skip",
+  callback: ({ message, client }:CommandUsage) => {
+    if(!message) return
+    client.Distube.stop(message);
   },
-} as ICommand;
+} as CommandObject;
