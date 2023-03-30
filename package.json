@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./dist/index.js",
     "build": "tsc --outDir ./dist",
-    "preinstall": "apt install python3",
+    "preinstall": "npm config set python '/usr/bin/python3' &&apt install python3",
     "install": "npm install --global node-gyp",
     "runc": "npm run build && npm run start"
   },
