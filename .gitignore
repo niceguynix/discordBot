@@ -105,3 +105,4 @@ typings/
 
 #compiled js
 dist/
+.space
